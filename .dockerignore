@@ -1,0 +1,17 @@
+# Purpose of the .dockerignore is to exclude files from the Docker context
+
+# Git 
+.git
+.gitignore
+
+# Docker
+.docker
+
+# Python
+app/__pycache__/
+app/*/__pycache__/
+app/*/*/__pycache__/
+app/*/*/*/__pycache__/
+.env/
+.venv/
+venv/

@@ -1,0 +1,19 @@
+# Version of the docker-compose syntax
+version: "3.9"
+
+# docker-compose can consist of 1 or more services
+services:
+  app:
+    build:
+      # Where is the dockerfile
+      context: .
+      args:
+        - DEV=true
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app
+    # This is overrided by "docker-compose run" command, eg docker-compose run --rm app sh -c "django-admin startproject app .
+    # This command is only used if no command is specified with "docker-compose run"
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"

@@ -1,0 +1,8 @@
+[flake8]
+# Exclude the following directories and files from the linting
+# These directories and files are generated automatically by Django, therefore we not concerned with them
+exclude = 
+    migrations,
+    __pycache__,
+    manage.py,
+    settings.py
